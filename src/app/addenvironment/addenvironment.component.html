@@ -1,0 +1,4 @@
+Title <input type="text" [(ngModel)]="selectedenvironment.title"/><br>
+Desc <input type="text" [(ngModel)]="selectedenvironment.description"/><br>
+location <input type="text" [(ngModel)]="selectedenvironment.location"/><br>
+<button *ngIf="selectedenvironment.id == -1" (click)="createenvironment()"> POST </button>
