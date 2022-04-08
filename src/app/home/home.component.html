@@ -7,8 +7,8 @@
 
     <div>
      
-      <div class="row" routerLink="/dashboard" >
-        <div class="col-md-3 mx-auto my-5" *ngFor="let env of environments">
+      <div class="row" routerLink="" >
+        <div class="col-md-3 mx-auto my-5" *ngFor="let env of enviro">
            <mdb-card>
              <!--<mdb-card-img [src]="env.image" alt="Card image cap">
              </mdb-card-img>-->
@@ -23,7 +23,7 @@
                <mdb-card-text>
                 {{env.location}}
               </mdb-card-text>
-               <button  (click)="deleteenvironment()" mdbBtn color="dark">Delete</button>
+               <button  (click)="deleteenvironment(env.id)" mdbBtn color="dark">Delete</button>
              </mdb-card-body>
            </mdb-card>
          </div>

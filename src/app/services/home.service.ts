@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Enviro } from '../enviro';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,9 +20,9 @@ export class environmentService {
     return this.http.post(this.baseUrl + 'api/environments', body,
     {headers: this.httpHeadears});
   }
-  deleteenvironment(id: string | number): Observable<any> {
-    return this.http.delete(this.baseUrl + 'post/' + id ,
-    {headers: this.httpHeadears});
+  deleteenvironment( id: any  ): Observable <any> {
+    return this.http.delete<Enviro>(this.baseUrl +'post/'+ id  
+    );
   }
  
 }
