@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { AddenvironmentComponent } from './addenvironment/addenvironment.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,4 +14,7 @@ export class AppComponent {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
+ 
 }
+
+

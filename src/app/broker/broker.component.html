@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <form>
+        <h5>ADD New Broker</h5>
+        
+        
+            <div class="form-group"  >
+              <label for="formGroupExampleInput">Name</label>
+              <input  class="form-control" id="formGroupExampleInput" [(ngModel)]="selectedbroker.name"  [ngModelOptions]="{standalone: true}" placeholder="Title">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Server</label>
+              <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selectedbroker.server" [ngModelOptions]="{standalone: true}" placeholder="Description">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Port</label>
+                <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selectedbroker.port " [ngModelOptions]="{standalone: true}" placeholder="Location">
+            </div>
+             <div class="form-group">  
+              
+              <button  mdbBtn color="dark" (click)="onClose()"  *ngIf="selectedbroker.id == -1" (click)="createbroker()" >Post</button>
+              <button   mdbBtn color="dark" (click)="onClose()">Close</button>
+             </div>
+        </form>
+        
+
+    </div>
+    <div class="col-1">    <mat-divider [vertical]="true" vertical style="height:300px"></mat-divider>
+    </div>
+
+    <div class="col-5">
+<h5>Select Registred Broker</h5>
+<mat-selection-list *ngFor="let bro of brokers" #shoes>
+  <div class="row">
+    <div class="col-9">
+  <mat-list-option >
+    {{bro.name}}
+  </mat-list-option></div>
+  <div class="col-3"> 
+    <li class="list-inline-item">
+    <button class="btn  btn-sm rounded-0" (click)="deletebroker(bro.id)" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><mat-icon>delete</mat-icon></button>
+    </li>  
+  </div></div>
+</mat-selection-list>
+
+    </div>
+  </div>
+</div>
+
+
+

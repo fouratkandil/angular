@@ -1,0 +1,26 @@
+<form>
+  <div class="container">
+<div class="row justify-content-center">
+<h4  class="text-center">Network</h4>
+
+</div>
+<br>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-2">
+    <h5>protocole</h5></div>
+    <div class="col-1"></div>
+
+  <div class="col-7">
+<mat-form-field appearance="fill">
+  <mat-label>Protocole</mat-label>
+  <mat-select>
+    <mat-option routerLink="broker" (click)="openDialog()" *ngFor="let protocole of protocoles" [value]="protocole.value">
+      {{protocole.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  </div>
+</div>
+</div>
+</form>

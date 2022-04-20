@@ -1,4 +1,21 @@
-Title <input type="text" [(ngModel)]="selectedenvironment.title"/><br>
-Desc <input type="text" [(ngModel)]="selectedenvironment.description"/><br>
-location <input type="text" [(ngModel)]="selectedenvironment.location"/><br>
-<button *ngIf="selectedenvironment.id == -1" (click)="createenvironment()"> POST </button>
+<form>
+    <div class="form-group"  >
+      <label for="formGroupExampleInput">Title</label>
+      <input  class="form-control" id="formGroupExampleInput" [(ngModel)]="selectedenvironment.title"  [ngModelOptions]="{standalone: true}" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Description</label>
+      <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selectedenvironment.description" [ngModelOptions]="{standalone: true}" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">location</label>
+        <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selectedenvironment.location " [ngModelOptions]="{standalone: true}" placeholder="Location">
+    </div>
+     <div class="form-group">  
+      
+      <button  mdbBtn color="dark" (click)="onClose()"  *ngIf="selectedenvironment.id == -1" (click)="createenvironment()" >Post</button>
+      <button   mdbBtn color="dark" (click)="onClose()">Close</button>
+     </div>
+</form>
+
+

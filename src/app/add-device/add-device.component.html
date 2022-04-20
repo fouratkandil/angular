@@ -1,0 +1,26 @@
+<form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Name</label>
+      <input  class="form-control" id="formGroupExampleInput" [(ngModel)]="selecteddevice.DeviceName"  [ngModelOptions]="{standalone: true}" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Type</label>
+      <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selecteddevice.DeviceType" [ngModelOptions]="{standalone: true}" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Description</label>
+        <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selecteddevice.DeviceDescription" [ngModelOptions]="{standalone: true}" placeholder="Location">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Key</label>
+        <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selecteddevice.DeviceKey" [ngModelOptions]="{standalone: true}" placeholder="Location">
+    </div> <div class="form-group">
+        <label for="formGroupExampleInput2">ENV ID</label>
+        <input  class="form-control" id="formGroupExampleInput2" [(ngModel)]="selecteddevice.DeviceEnvID" [ngModelOptions]="{standalone: true}" placeholder="Location">
+    </div>
+     <div class="form-group">  
+ 
+      <button (click)="onClose()" *ngIf="selecteddevice.id == -1" (click)="createdevice()" routerLink="/list">POST</button>
+     </div>
+</form>
+
